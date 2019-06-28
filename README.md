@@ -1,2 +1,3 @@
-# helm-phpLDAPadmin
-Helm Chart for phpLDAPadmin
+# phpLDAPadmin Helm Chart
+
+

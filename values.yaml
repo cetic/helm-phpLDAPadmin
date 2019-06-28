@@ -1,0 +1,49 @@
+# Default values for phpldapadmin.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+env:
+  # PHPLDAPADMIN_LDAP_HOSTS: ...
+  PHPLDAPADMIN_HTTPS: "false"
+  PHPLDAPADMIN_TRUST_PROXY_SSL: "true"
+
+replicaCount: 1
+
+image:
+  repository: osixia/phpldapadmin
+  tag: 0.7.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+
+ingress:
+  enabled: false
+  # annotations:
+  #   kubernetes.io/tls-acme: "true"
+  # path: /
+  # hosts:
+  # - phpldapadmin.example.org
+  #
+  # tls:
+  # - secretName: phpldapadmin-dedicated-tls
+  #   hosts:
+  #   - phpldapadmin.example.org
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
