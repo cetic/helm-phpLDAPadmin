@@ -15,7 +15,6 @@ spec:
     matchLabels:
       app: {{ template "phpldapadmin.name" . }}
       release: {{ .Release.Name }}
-
   template:
     metadata:
       labels:
@@ -34,14 +33,9 @@ spec:
         - configMapRef:
             name: {{ template "phpldapadmin.fullname" . }}
         livenessProbe:
-          httpGet:
-            path: /
-            port: http
+{{ toYaml .Values.livenessProbe | indent 12 }}
         readinessProbe:
-          httpGet:
-            path: /
-            port: http
-
+{{ toYaml .Values.readinessProbe | indent 12 }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
