@@ -1,10 +1,10 @@
-# Helm Chart for pgAdmin
+# Helm Chart for phpldapadmin
 
 [![CircleCI](https://circleci.com/gh/cetic/helm-pgadmin.svg?style=shield)](https://circleci.com/gh/cetic/helm-pgadmin/tree/master)
 
 ## Introduction
 
-This [Helm](https://github.com/kubernetes/helm) chart installs [phpLDAP](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page) in a Kubernetes cluster.
+This [Helm](https://github.com/kubernetes/helm) chart installs [phpLDAPadmin](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page) in a Kubernetes cluster.
 
 ## Prerequisites
 
@@ -83,8 +83,8 @@ The following table lists the configurable parameters of the pgAdmin chart and t
 
 ## Credits
 
-Initially inspired from https://github.com/jjcollinge/pgadmin-chart, which is archived.
+Initially inspired from https://github.com/gengen1988/helm-phpldapadmin.
 
 ## License
 
-[Apache License 2.0](/LICENSE.md)
+[Apache License 2.0](/LICENSE)
