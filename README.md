@@ -1,6 +1,6 @@
 # Helm Chart for phpLDAPadmin
 
-[![CircleCI](https://circleci.com/gh/cetic/helm-pgadmin.svg?style=shield)](https://circleci.com/gh/cetic/helm-pgadmin/tree/master)
+[![CircleCI](https://circleci.com/gh/cetic/helm-phpLDAPadmin.svg?style=svg)](https://circleci.com/gh/cetic/helm-phpLDAPadmin/tree/master)
 
 ## Introduction
 
@@ -32,7 +32,7 @@ The following items can be set via `--set` flag during installation or configure
 - **NodePort**: Exposes the service on each Node’s IP at a static port (the NodePort). You’ll be able to contact the NodePort service, from outside the cluster, by requesting `NodeIP:NodePort`.
 - **LoadBalancer**: Exposes the service externally using a cloud provider’s load balancer.
 
-#### Configure how to persist data:
+#### Configure how to persist data (TODO):
 
 - **Disable**: The data does not survive the termination of a pod.
 - **Persistent Volume Claim(default)**: A default `StorageClass` is needed in the Kubernetes cluster to dynamic provision the volumes. Specify another StorageClass in the `storageClass` or set `existingClaim` if you have already existing persistent volumes to use.
@@ -55,10 +55,14 @@ helm delete --purge my-release
 
 ## Configuration
 
-The following table lists the configurable parameters of the pgAdmin chart and the default values.
+The following table lists the configurable parameters of the phpLDAPadmin chart and the default values.
 
 | Parameter                                                                   | Description                                                                                                        | Default                         |
 | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------| ------------------------------- |
+| **ReplicaCount**                                                            |
+| `replicaCount`                                                              | number of phpLDAPadmin images                                                                                               | `1`      |
+| **Env**                                                                     |
+| `env`                                                                       | See values.yaml                                                                                                           | `nil`      |
 | **Image**                                                                   |
 | `image.repository`                                                          | phpldapadmin Image name                                                                                                 | `osixia/phpldapadmin`      |
 | `image.tag`                                                                 | phpldapadmin Image tag                                                                                                  | `0.7.1`                    |
@@ -67,19 +71,26 @@ The following table lists the configurable parameters of the pgAdmin chart and t
 | `service.type`                                                              | Type of service for phpldapadmin frontend                                                                               | `LoadBalancer`             |
 | `service.port`                                                              | Port to expose service                                                                                             | `80`                            |
 | `service.loadBalancerIP`                                                    | LoadBalancerIP if service type is `LoadBalancer`                                                                   | `nil`                           |
+| `service.loadBalancerSourceRanges`                                          | LoadBalancerSourceRanges                                                                                           | `nil`                           |
 | `service.annotations`                                                       | Service annotations                                                                                                | `{}`                            |
 | **Ingress**                                                                 |
 | `ingress.enabled`                                                           | Enables Ingress                                                                                                    | `false`                         |
 | `ingress.annotations`                                                       | Ingress annotations                                                                                                | `{}`                            |
 | `ingress.path`                                                              | Path to access frontend                                                                                            | `/`                             |
-| `ingress.host`                                                              | Ingress host                                                                                                       | `nil`                           |
+| `ingress.hosts`                                                             | Ingress hosts                                                                                                      | `nil`                           |
 | `ingress.tls`                                                               | Ingress TLS configuration                                                                                          | `[]`                            |
 | **ReadinessProbe**                                                          |
-| `readinessProbe`                                                            | Rediness Probe settings                                                                                            | `value_goes_here`|
+| `readinessProbe`                                                            | Rediness Probe settings                                                                                            | `{ "httpGet": { "path": "/", "port": http }}`|
 | **LivenessProbe**                                                           |
-| `livenessProbe`                                                             | Liveness Probe settings                                                                                            | `value_goes_here`|
+| `livenessProbe`                                                             | Liveness Probe settings                                                                                            | `{ "httpGet": { "path": "/", "port": http }}`|
 | **Resources**                                                               |
 | `resources`                                                                 | CPU/Memory resource requests/limits                                                                                | `{}`                            |
+| **nodeSelector**                                                            |
+| `nodeSelector`                                                              | nodeSelector                                                                                                       | `{}`                            |
+| **tolerations**                                                             |
+| `tolerations`                                                               | tolerations                                                                                                        | `{}`                            |
+| **affinity**                                                                |
+| `affinity`                                                                  | affinity                                                                                                           | `{}`                            |
 
 ## Credits
 
