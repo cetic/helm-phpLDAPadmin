@@ -1,4 +1,4 @@
-# Helm Chart for phpldapadmin
+# Helm Chart for phpLDAPadmin
 
 [![CircleCI](https://circleci.com/gh/cetic/helm-pgadmin.svg?style=shield)](https://circleci.com/gh/cetic/helm-pgadmin/tree/master)
 
