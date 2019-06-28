@@ -1,4 +1,15 @@
-appVersion: 0.7.1
-description: Web-based LDAP browser to manage your LDAP server
 name: phpldapadmin
 version: 0.1.0
+appVersion: 0.7.1
+description: Web-based LDAP browser to manage your LDAP server
+keywords:
+  - phpldapadmin
+  - openldap
+  - userrights
+home: http://phpldapadmin.sourceforge.net
+icon: http://phpldapadmin.sourceforge.net/wiki/images/d/d4/Logo.jpg
+source:
+- https://github.com/cetic/helm-phpLDAPadmin
+maintainers:
+- name: alexnuttinck
+- name: AyadiAmen
