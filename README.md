@@ -1,6 +1,6 @@
 # Helm Chart for phpLDAPadmin
 
-[![CircleCI](https://circleci.com/gh/cetic/helm-phpLDAPadmin.svg?style=svg)](https://circleci.com/gh/cetic/helm-phpLDAPadmin/tree/master)
+[![CircleCI](https://circleci.com/gh/cetic/helm-phpLDAPadmin.svg?style=svg)](https://circleci.com/gh/cetic/helm-phpLDAPadmin/tree/master) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/github/tag/cetic/helm-phpLDAPadmin.svg?label=release)
 
 ## Introduction
 
