@@ -1,4 +1,4 @@
-name: phpldap-admin
+name: phpldapadmin
 version: 0.1.1
 appVersion: 0.7.1
 description: Web-based LDAP browser to manage your LDAP server
