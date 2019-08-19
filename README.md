@@ -96,6 +96,12 @@ The following table lists the configurable parameters of the phpLDAPadmin chart 
 
 Initially inspired from https://github.com/gengen1988/helm-phpldapadmin.
 
+## Contributing
+
+Feel free to contribute by making a [pull request](https://github.com/cetic/helm-phpLDAPadmin/pull/new/master).
+
+Please read the official [Contribution Guide](https://github.com/helm/charts/blob/master/CONTRIBUTING.md) from Helm for more information on how you can contribute to this Chart.
+
 ## License
 
 [Apache License 2.0](/LICENSE)
