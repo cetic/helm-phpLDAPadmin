@@ -1,5 +1,5 @@
 name: phpldapadmin
-version: 0.1.2
+version: 0.1.3
 appVersion: 0.7.1
 description: Web-based LDAP browser to manage your LDAP server
 keywords:
